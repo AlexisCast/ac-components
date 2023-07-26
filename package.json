@@ -22,7 +22,7 @@
     "analyze": "size-limit --why",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "clear": "rm -rf node_modules/ & rm -rf dist/ & rm -rf package-lock.json"
+    "clear": "rm -rf node_modules/ & rm -rf dist/ & rm -rf package-lock.json  & rm -rf storybook-static"
   },
   "peerDependencies": {
     "react": ">=16"
