@@ -14,12 +14,15 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "lint": "eslint --ext ts,tsx .",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
     "prepare": "tsdx build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clear": "rm -rf node_modules/ & rm -rf dist/ & rm -rf package-lock.json  & rm -rf storybook-static"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -62,8 +65,13 @@
     "@storybook/react-webpack5": "^7.1.0",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
     "babel-loader": "^9.1.3",
+    "eslint": "^8.42.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-prettier": "^5.0.0",
     "husky": "^8.0.3",
+    "prettier": "^3.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
@@ -72,5 +80,6 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.6.0",
     "typescript": "^3.9.10"
-  }
+  },
+  "homepage": "http://AlexisCast.github.io/ac-components"
 }

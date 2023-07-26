@@ -10,5 +10,5 @@ const App = () => {
     </div>
   );
 };
-
+// eslint-disable-next-line
 ReactDOM.render(<App />, document.getElementById('root'));
