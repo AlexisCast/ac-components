@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 
-interface ButtonProps {
+export interface ButtonProps {
   children: ReactNode;
-  variant: 'primary' | 'secondary';
+  variant: 'default' | 'primary' | 'secondary';
 }
 
 export const Button = ({ children, ...props }: ButtonProps) => {
