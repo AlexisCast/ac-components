@@ -1,11 +1,37 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode, CSSProperties } from 'react';
+import classNames from 'classnames';
+
+import './button.css';
 
 export interface ButtonProps {
   children: ReactNode;
-  variant: 'default' | 'primary' | 'secondary';
+  size?: 'sm' | 'md' | 'lg';
+  variant?: 'default' | 'primary' | 'secondary';
+  className?: any;
+  additionalStyles?: CSSProperties;
 }
 
-export const Button = ({ children, ...props }: ButtonProps) => {
-  console.log('This shows errors');
-  return <button {...props}>{children}</button>;
+export const Button = ({
+  variant = 'default',
+  size = 'md',
+  children,
+  className,
+  additionalStyles,
+  ...props
+}: ButtonProps) => {
+  return (
+    <button
+      className={classNames('storybook-button', className, {
+        'storybook-button--primary': variant === 'primary',
+        'storybook-button--secondary': variant === 'secondary',
+        'storybook-button--small': size === 'sm',
+        'storybook-button--medium': size === 'md',
+        'storybook-button--large': size === 'lg',
+      })}
+      style={{ ...additionalStyles }}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 };

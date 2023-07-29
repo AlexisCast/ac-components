@@ -25,4 +25,28 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 // https://storybook.js.org/docs/react/workflows/unit-testing
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  children: 'Text',
+};
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+  variant: 'primary',
+  children: 'Primary',
+};
+
+export const Secondary = Template.bind({});
+
+Secondary.args = {
+  variant: 'secondary',
+  children: 'Secondary',
+};
+
+export const DefaultWithAdditionalStyles = Template.bind({});
+
+DefaultWithAdditionalStyles.args = {
+  children: 'Text',
+  // className: 'color: red',
+  additionalStyles: { backgroundColor: 'yellow', fontSize: '20px' },
+};
