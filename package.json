@@ -81,5 +81,8 @@
     "tslib": "^2.6.0",
     "typescript": "^3.9.10"
   },
-  "homepage": "http://AlexisCast.github.io/ac-components"
+  "homepage": "http://AlexisCast.github.io/ac-components",
+  "dependencies": {
+    "classnames": "^2.3.2"
+  }
 }
