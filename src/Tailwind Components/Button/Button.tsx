@@ -2,12 +2,16 @@ import React, { ReactNode } from 'react';
 import classNames from 'classnames';
 
 export interface ButtonProps {
+  /** Provide a text for the button */
   children: ReactNode;
+  /** How large should the button be? */
   size?: 'sm' | 'md' | 'lg';
+  /** Button variant to use */
   variant?: 'default' | 'primary' | 'secondary';
+  /** additional style if needed */
   className?: string;
 }
-
+/** This is the default button */
 export const Button = ({
   variant = 'default',
   size = 'md',
