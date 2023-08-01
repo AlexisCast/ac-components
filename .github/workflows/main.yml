@@ -4,9 +4,11 @@ on:
   push:
     branches:
       - main
+      - develop
   pull_request:
     branches:
       - main
+      - develop
 #Functions
 jobs:
   #Build Job
@@ -23,6 +25,8 @@ jobs:
           node-version: 16.x
       - name: Install NPM Dependencies
         run: npm i
+      - name: Check eslint
+        run: npm run lint:fix
       - name: Build Project
         run: npm run build-storybook
       - name: Upload artifact in order to deploy
