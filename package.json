@@ -1,31 +1,36 @@
-{
+{  
+  "name": "@castalexis/ac-components",
+  "author": "AlexisCast",
+  "module": "dist/ac-components.esm.js",
   "version": "0.1.0",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
+    "analyze": "size-limit --why",
+    "build-storybook": "storybook build",
     "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "eslint --ext ts,tsx .",
-    "lint:fix": "eslint src/ --fix",
+    "build:rollup": "rollup -c",
+    "clear": "rm -rf node_modules/ & rm -rf dist/ & rm -rf package-lock.json  & rm -rf storybook-static",
+    "clear:dist": "rm -rf dist/",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "lint:fix": "eslint src/ --fix",
+    "lint": "eslint --ext ts,tsx .",
     "prepare": "tsdx build",
     "size": "size-limit",
-    "analyze": "size-limit --why",
+    "start": "tsdx watch",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "clear": "rm -rf node_modules/ & rm -rf dist/ & rm -rf package-lock.json  & rm -rf storybook-static"
+    "test": "tsdx test --passWithNoTests"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "husky": {
     "hooks": {
@@ -38,9 +43,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ac-components",
-  "author": "AlexisCast",
-  "module": "dist/ac-components.esm.js",
   "size-limit": [
     {
       "path": "dist/ac-components.cjs.production.min.js",
@@ -56,6 +58,8 @@
     "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.5",
     "@babel/preset-typescript": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@size-limit/preset-small-lib": "^8.2.6",
     "@storybook/addon-essentials": "^7.1.0",
     "@storybook/addon-info": "^5.3.21",
@@ -78,6 +82,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
+    "rollup": "^2.78.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-scss": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.31.2",
     "size-limit": "^8.2.6",
     "storybook": "^7.1.0",
     "tailwindcss": "^3.3.3",
@@ -87,6 +96,7 @@
   },
   "homepage": "http://AlexisCast.github.io/ac-components",
   "dependencies": {
+    "@rollup/plugin-replace": "^5.0.2",
     "classnames": "^2.3.2"
   }
 }

@@ -31,5 +31,11 @@
     "forceConsistentCasingInFileNames": true,
     // `tsdx build` ignores this option, but it is commonly used when type-checking separately with `tsc`
     "noEmit": true,
-  }
+    //target es5
+    "target": "es2016",
+    "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "declarationDir": "dist"
+  },
+  "exclude": ["node_modules", "lib"]
 }
