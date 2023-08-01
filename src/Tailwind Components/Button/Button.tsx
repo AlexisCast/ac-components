@@ -26,7 +26,7 @@ export const Button = ({
         className,
         {
           'text-white !bg-[#1ea7fd]': variant === 'primary',
-          'text-[#333] !bg-transparent shadow-inner border border-gray-300':
+          'text-[#333] !bg-transparent !border !border-neutral-800/20':
             variant === 'secondary',
           'text-[12px] py-2.5 px-4': size === 'sm',
           'text-[14px] py-[11px] px-5': size === 'md',
