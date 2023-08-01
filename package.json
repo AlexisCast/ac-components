@@ -16,7 +16,7 @@
     "analyze": "size-limit --why",
     "build-storybook": "storybook build",
     "build": "rollup -c",
-    "build:rollup": "tsdx build",
+    "build:tsdx": "tsdx build",
     "clear": "rm -rf node_modules/ & rm -rf dist/ & rm -rf package-lock.json  & rm -rf storybook-static",
     "clear:dist": "rm -rf dist/",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
