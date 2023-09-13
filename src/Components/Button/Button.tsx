@@ -9,6 +9,7 @@ export interface ButtonProps {
   variant?: 'default' | 'primary' | 'secondary';
   className?: any;
   additionalStyles?: CSSProperties;
+  onClick: () => void;
 }
 
 export const Button = ({
